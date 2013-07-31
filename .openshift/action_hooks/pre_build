@@ -1,0 +1,4 @@
+#!/bin/bash
+set -x
+export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-1.6
+export PATH=$GRADLE_HOME/bin:$PATH
