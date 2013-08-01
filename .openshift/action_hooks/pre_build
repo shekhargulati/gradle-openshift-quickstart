@@ -4,25 +4,11 @@
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 set -x
-if [ -d $OPENSHIFT_DATA_DIR/gradle-1.6 ]
+if [ ! -d $OPENSHIFT_DATA_DIR/gradle-1.6 ]
 then
-	cd $OPENSHIFT_REPO_DIR
-	echo SETTING GRADLE HOME
-	export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
-	export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-1.6
-	export PATH=$GRADLE_HOME/bin:$PATH
-	gradle build
-	exit 0
-else
 	cd $OPENSHIFT_DATA_DIR
 	mkdir gradle
 	wget http://services.gradle.org/distributions/gradle-1.6-bin.zip
 	unzip gradle-1.6-bin.zip
 	rm -f gradle-1.6-bin.zip
-	cd $OPENSHIFT_REPO_DIR
-	echo SETTING GRADLE HOME
-	export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
-	export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-1.6
-	export PATH=$GRADLE_HOME/bin:$PATH
-	gradle build
 fi
