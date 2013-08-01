@@ -6,7 +6,7 @@
 set -x
 if [ -d $OPENSHIFT_DATA_DIR/gradle-1.6 ]
 then
-	set -x
+	cd $OPENSHIFT_REPO_DIR
 	echo SETTING GRADLE HOME
 	export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
 	export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-1.6
