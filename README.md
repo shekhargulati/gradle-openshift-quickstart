@@ -13,6 +13,7 @@ $ rhc app create gradledemo tomcat-7
 ## Step 2: Pull the source code form github##
 
 ```
+$ cd gradledemo
 $ git rm -rf src/ pom.xml
 $ git remote add upstream -m master https://github.com/shekhargulati/gradle-openshift-quickstart.git
 $ git pull -s recursive -X theirs upstream master
