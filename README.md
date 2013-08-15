@@ -15,6 +15,7 @@ $ rhc app create gradledemo tomcat-7
 ```
 $ cd gradledemo
 $ git rm -rf src/ pom.xml
+$ git commit -am "deleted template source code"
 $ git remote add upstream -m master https://github.com/shekhargulati/gradle-openshift-quickstart.git
 $ git pull -s recursive -X theirs upstream master
 ```
